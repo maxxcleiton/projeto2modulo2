@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Projeto Pokedéx - Módulo 2 - Projeto 2",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -e js,html,css,ejs"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/maxxcleiton/projeto2modulo2/issues"
   },
-  "homepage": "https://github.com/maxxcleiton/projeto2modulo2#readme"
+  "homepage": "https://github.com/maxxcleiton/projeto2modulo2#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
