@@ -15,12 +15,14 @@ app.listen(port, () => { // listen é uma funcao do express pra criar servidor
 
 //
 
-const pokedex = [
+let message = "";
+
+let pokedex = [
     {
-        Número: 25,
+        Número: 1,
         Nome: 'Pikachu',
         Tipo: 'Elétrico',
-        Imagem: 'imagem',
+        Imagem: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png',
         Descrição: 'Pikachu que pode gerar eletricidade poderosa tem bolsas nas bochechas que são extra macias e super elásticas.',
         Altura: 1.4,
         Peso: 6,
@@ -28,10 +30,10 @@ const pokedex = [
         Habilidade: 'Estático',
     }, 
     {
-        Número: 4,
+        Número: 2,
         Nome: 'Charmander',
         Tipo: 'Fogo',
-        Imagem: 'imagem',
+        Imagem: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png',
         Descrição: 'Tem preferência por coisas quentes. Quando chove, diz-se que o vapor jorra da ponta de sua cauda.',
         Altura: 0.6,
         Peso: 8.5,
@@ -39,10 +41,10 @@ const pokedex = [
         Habilidade: 'Chama',
     }, 
     {
-        Número: 7,
+        Número: 3,
         Nome: 'Squirtle',
         Tipo: 'Água',
-        Imagem: 'imagem',
+        Imagem: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png',
         Descrição: 'Quando retrai seu longo pescoço em sua concha, esguicha água com força vigorosa.',
         Peso: 9,
         Categoria: 'Tartaruga',
@@ -53,7 +55,9 @@ const pokedex = [
 //
 
 app.get('/', (req, res) => { // get é um método http/https que serve para trazer uma pagina
-    res.render('index.ejs', {pokedex})
+    res.render('index.ejs', {
+        pokedex
+    })
 })
 
 app.get('/detalhes', (req, res) => { // get é um método http/https que serve para trazer uma pagina
@@ -61,5 +65,36 @@ app.get('/detalhes', (req, res) => { // get é um método http/https que serve p
 })
 
 app.get('/cadastro', (req, res) => { // get é um método http/https que serve para trazer uma pagina
-    res.render('cadastro.ejs')
+    res.render('cadastro.ejs', {
+        message,
+    })
 })
+
+//
+
+// GET METHOD ROUTE
+app.get('/', (req,res) => {
+    res.send('GET request to the homepage');
+});
+
+// POST METHOD ROUTE
+app.post('/', (req,res) => {
+    res.send('POST request to the homepage')
+});
+
+
+// Isso aqui sempre antes do post mais pra frente
+app.use(express.urlencoded());
+
+// Tudo do formulário eu preciso organizar o json:
+// app.post('/subscription', (req,res) => {
+//     const { nome, email } = req.body;
+//     res.send({ nome: nome, email: email });
+// });
+
+// Aqui é a versao adicionando mensagem estilizada de resposta
+app.post('/subscription', (req, res) => {
+    const { nome, email } = req.body;
+    message = `Parabéns ${nome}, sua incrição foi realizada com sucesso! Um e-mail foi enviado para: ${email}`;
+    res.redirect('/cadastro');
+});
