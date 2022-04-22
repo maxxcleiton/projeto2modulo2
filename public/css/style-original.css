@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+    align-items: center;
+    height: 10vh;
+    background-color: red;
+}
+
+.logo {
+    width: 20vw;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+   }
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 16px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: red;
+}
+
+main {
+    height: 80%;
+}
+
+footer {
+    background-color: black;
+    color: aliceblue;
+    padding: 2vh;
+    text-align: center;
+}
+
+section#pokemons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+article.card {
+    height: 300px;
+    width: 200px;
+    border: 1px solid red;
+}
+
+article div.card_image{
+    height: 85%;
+    border: 1px solid greenyellow;
+}
+
+article.card div.nome_personagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 15%;
+}

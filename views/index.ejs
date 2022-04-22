@@ -1,22 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
-    <title>Meu index.ejs</title>
+    <title>Projeto 2</title>
 </head>
-<body>
-    <h1>Aqui será meu Pokedex!</h1>
-            <div> <%= pokedex[0].Nome %> </div>
-            <div> <%= pokedex[0].Imagem %> </div>
-            <div> <%= pokedex[0].Tipo %> </div>
-            <div> <%= pokedex[1].Nome %> </div>
-            <div> <%= pokedex[1].Imagem %> </div>
-            <div> <%= pokedex[1].Tipo %> </div>
-            <div> <%= pokedex[2].Nome %> </div>
-            <div> <%= pokedex[2].Imagem %> </div>
-            <div> <%= pokedex[2].Tipo %> </div>
+<body> 
+
+    <%- include('partials/header.ejs') %>
+
+    <main>
+            <section id="pokemons">
+                <% pokedex.forEach(element => { %>
+
+                    <article class="card">
+
+                        <div class="card_image">
+                            <img src="">
+                        </div>
+
+                        <div class="nomes">
+                            <div><%= pokedex[0].Nome %></div>
+                            <div><%= pokedex[0].Tipo %></div>
+                            <div><%= pokedex[0].Categoria %></div>
+
+                        </div>
+                    </article>
+                    <% }) %>
+            </section>
+<!-- 
+            <section id="casuais">
+
+            </section> -->
+    </main>
+    <%- include('partials/footer.ejs') %>
 </body>
 </html>
