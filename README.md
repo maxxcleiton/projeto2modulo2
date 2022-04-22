@@ -8,7 +8,7 @@ Trata-se de uma enciclopédia virtual portátil de alta tecnologia que os treina
 Em geral, quando são cumpridos determinados requisitos, a capacidade pode ser aumentada permitindo que a Pokédex possa armazenar dados de outros Pokémon, que não são comuns, assim como os Pokémon de outras regiões.
 
 ## Contatos
-<a href="https://www.linkedin.com/in/maxcleiton/" target="blank">![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)<a>
+<a href="https://www.linkedin.com/in/maxcleiton/" target="_blank">![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)<a>
 
 ## Stacks
 As ferramentas usadas neste projeto são:
