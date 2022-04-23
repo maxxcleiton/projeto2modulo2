@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
-    <title>Projeto 2</title>
+    <title>Página Inicial</title>
 </head>
 <body> 
 
@@ -14,27 +14,29 @@
     <main>
             <section id="pokemons">
                 <% pokedex.forEach(element => { %>
-
+                    <a href="/detalhes/<%= element.Id %>">>
                     <article class="card">
 
                         <div class="card_image">
-                            <img src="">
+                            <img src="<%= element.Imagem %>"
+                            alt="<%= element.Nome %>"
+                            >
                         </div>
 
                         <div class="nomes">
-                            <div><%= pokedex[0].Nome %></div>
-                            <div><%= pokedex[0].Tipo %></div>
-                            <div><%= pokedex[0].Categoria %></div>
-
+                            <div>
+                                <%= element.Nome %>
+                                <%= element.Tipo %>
+                                <%= element.Categoria %>
+                            </div>
                         </div>
                     </article>
+                    </a>
                     <% }) %>
             </section>
-<!-- 
-            <section id="casuais">
 
-            </section> -->
     </main>
+
     <%- include('partials/footer.ejs') %>
 </body>
 </html>

@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, "public")))
 
 const port = 3001
 app.listen(port, () => { // listen é uma funcao do express pra criar servidor
-    console.log(`Rodando na porta ${port} rsr22s`)
+    console.log(`Rodando na porta ${port}`)
 })
 
 //
@@ -19,7 +19,7 @@ let message = "";
 
 let pokedex = [
     {
-        Número: 1,
+        Id: 1,
         Nome: 'Pikachu',
         Tipo: 'Elétrico',
         Imagem: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png',
@@ -30,7 +30,7 @@ let pokedex = [
         Habilidade: 'Estático',
     }, 
     {
-        Número: 2,
+        Id: 2,
         Nome: 'Charmander',
         Tipo: 'Fogo',
         Imagem: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png',
@@ -41,7 +41,7 @@ let pokedex = [
         Habilidade: 'Chama',
     }, 
     {
-        Número: 3,
+        Id: 3,
         Nome: 'Squirtle',
         Tipo: 'Água',
         Imagem: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png',
@@ -56,16 +56,19 @@ let pokedex = [
 
 app.get('/', (req, res) => { // get é um método http/https que serve para trazer uma pagina
     res.render('index.ejs', {
-        pokedex
+        pokedex,
     })
 })
 
-app.get('/detalhes', (req, res) => { // get é um método http/https que serve para trazer uma pagina
-    res.render('detalhes.ejs')
+app.get('/detalhes/:id', (req, res) => { // get é um método http/https que serve para trazer uma pagina
+    res.render('detalhes.ejs', {
+        pokedex,
+    })
 })
 
-app.get('/cadastro', (req, res) => { // get é um método http/https que serve para trazer uma pagina
+app.get('/cadastro/', (req, res) => { // get é um método http/https que serve para trazer uma pagina
     res.render('cadastro.ejs', {
+        pokedex,
         message,
     })
 })
@@ -94,7 +97,17 @@ app.use(express.urlencoded());
 
 // Aqui é a versao adicionando mensagem estilizada de resposta
 app.post('/subscription', (req, res) => {
-    const { nome, email } = req.body;
-    message = `Parabéns ${nome}, sua incrição foi realizada com sucesso! Um e-mail foi enviado para: ${email}`;
-    res.redirect('/cadastro');
+    const { nome, tipo, imagem, descricao, altura, peso, categoria, habilidade } = req.body;
+    // res.send({
+    //     nome: nome,
+    //     tipo: tipo,
+    //     imagem: imagem,
+    //     descricao: descricao,
+    //     altura: altura,
+    //     peso: peso,
+    //     categoria: categoria,
+    //     habilidade: habilidade,
+    // })
+    message = `Pokémon cadastrado com sucesso!`;
+    res.redirect('/');
 });
