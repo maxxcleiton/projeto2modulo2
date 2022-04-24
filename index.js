@@ -61,8 +61,16 @@ app.get('/', (req, res) => { // get é um método http/https que serve para traz
 })
 
 app.get('/detalhes/:id', (req, res) => { // get é um método http/https que serve para trazer uma pagina
+    let poke = []
+    pokedex.filter((element) => {
+        if(element.Id == req.params.id) {
+            poke.push(element)
+        }
+    })
+    console.log(poke)
+    
     res.render('detalhes.ejs', {
-        pokedex,
+        poke,
     })
 })
 
