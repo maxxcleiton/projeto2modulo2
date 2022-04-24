@@ -10,11 +10,12 @@ Trata-se de uma enciclopédia virtual portátil de alta tecnologia que os treina
 Em geral, quando são cumpridos determinados requisitos, a capacidade pode ser aumentada permitindo que a Pokédex possa armazenar dados de outros Pokémon, que não são comuns, assim como os Pokémon de outras regiões.
 
 ## Contatos
-<a href="https://www.linkedin.com/in/maxcleiton/" target="_blank" rel="noopener">![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)<a>
+<a href="https://www.linkedin.com/in/maxcleiton/" target="blank" rel="noopener">![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)<a>
 <a href="https://www.instagram.com/maxcleitonn/" target="_blank" rel="noopener">![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)
 
 ## Stacks
 As ferramentas usadas neste projeto são:
+<br>
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
