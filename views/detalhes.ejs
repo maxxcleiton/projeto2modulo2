@@ -9,7 +9,56 @@
 </head>
 <body>
     <%- include('partials/header.ejs') %>
-    <%= poke[0].Nome %> 
+
+    <!-- <h1><%# poke[0].Nome %></h1> -->
+
+    <div class="flex-container">
+        <div class="flex-item">
+            <img src="<%- poke[0].Imagem %>" alt="Logo do Pokémon escolhido">
+        </div>
+        <div class="flex-item">
+            <table>
+            <!-- <tr></tr> table row - linha da tabela -->
+            <!-- <td></td> table dir - coluna da tabela -->
+            <!-- <thead></thead> - cabeçalho da tabela -->
+            <!-- <tbody></tbody> - corpo da minha tabela -->
+            <!-- <tfoot></tfoot> - rodapé da minha tabela -->
+
+            <thead>
+                <td colspan="2">Detalhes</td>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Nome</td>
+                    <td><%= poke[0].Nome %> </td>
+                </tr>
+                <tr>
+                    <td>Tipo</td>
+                    <td><%= poke[0].Tipo %> </td>
+                </tr>
+                <tr>
+                    <td>Altura</td>
+                    <td><%= poke[0].Altura %> m</td>
+                </tr>
+                <tr>
+                    <td>Peso</td>
+                    <td><%= poke[0].Peso %> kg</td>
+                </tr>
+                <tr>
+                    <td>Categoria</td>
+                    <td><%= poke[0].Categoria %> </td>
+                </tr>
+                <tr>
+                    <td>Habilidade</td>
+                    <td><%= poke[0].Habilidade %> </td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+
     <%- include('partials/footer.ejs') %>
+
 </body>
 </html>
