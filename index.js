@@ -46,6 +46,7 @@ let pokedex = [
         Tipo: 'Água',
         Imagem: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png',
         Descrição: 'Quando retrai seu longo pescoço em sua concha, esguicha água com força vigorosa.',
+        Altura: 0.5,
         Peso: 9,
         Categoria: 'Tartaruga',
         Habilidade: 'Corrente de água',
@@ -71,6 +72,7 @@ app.get('/detalhes/:id', (req, res) => { // get é um método http/https que ser
     
     res.render('detalhes.ejs', {
         poke,
+        pokedex,
     })
 })
 
