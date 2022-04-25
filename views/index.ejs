@@ -16,18 +16,14 @@
                 <% pokedex.forEach(element => { %>
                     <a href="/detalhes/<%= element.Id %>">
                     <article class="card">
-
                         <div class="card_image">
-                            <img src="<%= element.Imagem %>"
-                            alt="<%= element.Nome %>"
-                            >
+                            <img src="<%= element.Imagem %>" alt="<%= element.Nome %>">
                         </div>
-
                         <div class="nomes">
-                            <div>
-                                <%= element.Nome %>
-                                <%= element.Tipo %>
-                                <%= element.Categoria %>
+                            <div class="nomesMesmo">
+                                <p>Nome: <%= element.Nome %></p>
+                                <p>Tipo: <%= element.Tipo %></p>
+                                <p>Categoria: <%= element.Categoria %></p>
                             </div>
                         </div>
                     </article>
