@@ -17,14 +17,11 @@ header {
     background-color: red;
 }
 
-.logo {
-    width: 20vw;
-}
-
-img {
+.logo img{
     max-width: 100%;
     max-height: 100%;
-   }
+    height: 5rem;
+}
 
 header ul {
     display: flex;
@@ -37,19 +34,18 @@ header a {
     text-decoration: none;
 }
 
-header a:hover {
-    color: red;
-}
-
 main {
     height: 80%;
 }
 
 footer {
-    background-color: black;
-    color: aliceblue;
-    padding: 2vh;
-    text-align: center;
+  background-color: black;
+  color: white;
+  padding: 2vh;
+  position: fixed;
+  bottom:0;
+  left:0;
+  width: 100%;
 }
 
 section#pokemons {
@@ -60,20 +56,25 @@ section#pokemons {
     padding-top: 2vh;
 }
 
+a {
+  text-decoration: none;
+  outline: none;
+}
+
 article.card{
     height: 300px;
     width: 200px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 article div.card_image{
-    height: 75%;
-    border: 1px solid greenyellow;
+    height: 65%;
+    /* border: 1px solid greenyellow; */
 }
 
-/* article.card img {
+.card_image img {
   height: 100%;
-} */
+}
 
 article.card div.nomes {
     display: flex;
@@ -81,6 +82,7 @@ article.card div.nomes {
     align-items: center;
     flex-direction: column;
     height: 15%;
+    text-decoration: none;
 }
 
 article#content a#cadastro:hover {
@@ -90,7 +92,7 @@ article#content a#cadastro:hover {
 }
 
 section#cadastro {
-  background-color: rgb(177, 230, 255);
+  background-color: rgb(218, 243, 252);
   padding: 3rem;
   display: flex;
   justify-content: center;
@@ -98,7 +100,7 @@ section#cadastro {
 }
 
 section#cadastro h2 {
-  color: rgb(0, 51, 255);
+  color: rgb(253, 93, 93);
   text-align: center;
   padding-bottom: 3rem;
   font-size: 2.5rem;
@@ -144,3 +146,41 @@ section#cadastro form button:hover {
   color: #fff;
   transform: scale(1.1);
 }
+
+table {
+  width: 30em;
+  text-align: center;
+}
+
+table td {
+  border: 0.1rem solid red;
+  padding: 0.2rem;
+}
+
+table td:nth-child(1) {
+  background-color: tomato;
+  color: aliceblue;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  min-width: 30%;
+}
+.flex-item img {
+  max-width: 100%;
+  min-width: 30%;
+}
+
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+/* .menu-flex {
+  display: flex;
+  flex: 50%;
+} */
