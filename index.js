@@ -74,6 +74,7 @@ app.get('/detalhes/:id', (req, res) => { // get é um método http/https que ser
     res.render('detalhes.ejs', {
         poke,
         pokedex,
+        message,
     })
 })
 
@@ -98,14 +99,9 @@ app.post('/cadastro', (req,res) => {
     const { nome, tipo, imagem, descricao, altura, peso, categoria, habilidade, } = req.body;
     pokedex.push({ id: i, nome, tipo, imagem, descricao, altura, peso, categoria, habilidade,})
     console.log(pokedex)
-    // res.send({ id: i, nome: nome, tipo: tipo, imagem: imagem, descricao: descricao, altura: altura, peso: peso, categoria: categoria, habilidade: habilidade})
-
-    // res.send({ nome, tipo, imagem, descricao, altura, peso, categoria, habilidade })
-
-    // pokedex.push({ Id: i, Nome, Tipo, Imagem, Descrição, Altura, Peso, Categoria, Habilidade}, req.body)
-    // pokedex.push({Id: i}, req.body)
-    // console.log(pokedex)
+    message = `Pokémon adicionado com sucesso!`;
     res.redirect("/");
+
 });
 
 
