@@ -10,20 +10,25 @@
 <body>
     <%- include('partials/header.ejs') %>
 
-    <!-- <h1><%# poke[0].Nome %></h1> -->
+    <!-- <h1><%# poke[0].nome %></h1> -->
+
+    <div class="h1detalhes">
+        <h1><%- poke[0].nome %> </h1>
+    </div>
 
     <div class="flex-container">
         <div class="flex-item">
-            <img src="<%- poke[0].Imagem %>" alt="Logo do Pokémon escolhido">
+            <img src="<%- poke[0].imagem %>" alt="Logo do Pokémon escolhido">
         </div>
-        <div class="flex-item">
+
+        <div class="flex-item2">
             <table>
             <!-- <tr></tr> table row - linha da tabela -->
             <!-- <td></td> table dir - coluna da tabela -->
             <!-- <thead></thead> - cabeçalho da tabela -->
             <!-- <tbody></tbody> - corpo da minha tabela -->
             <!-- <tfoot></tfoot> - rodapé da minha tabela -->
-
+            <!-- <th> é usado para o thead-->
             <thead>
                 <td colspan="2">Detalhes</td>
             </thead>
@@ -31,27 +36,27 @@
             <tbody>
                 <tr>
                     <td>Nome</td>
-                    <td><%= poke[0].Nome %> </td>
+                    <td><%= poke[0].nome %> </td>
                 </tr>
                 <tr>
                     <td>Tipo</td>
-                    <td><%= poke[0].Tipo %> </td>
+                    <td><%= poke[0].tipo %> </td>
                 </tr>
                 <tr>
                     <td>Altura</td>
-                    <td><%= poke[0].Altura %> m</td>
+                    <td><%= poke[0].altura %> m</td>
                 </tr>
                 <tr>
                     <td>Peso</td>
-                    <td><%= poke[0].Peso %> kg</td>
+                    <td><%= poke[0].peso %> kg</td>
                 </tr>
                 <tr>
                     <td>Categoria</td>
-                    <td><%= poke[0].Categoria %> </td>
+                    <td><%= poke[0].categoria %> </td>
                 </tr>
                 <tr>
                     <td>Habilidade</td>
-                    <td><%= poke[0].Habilidade %> </td>
+                    <td><%= poke[0].habilidade %> </td>
                 </tr>
             </tbody>
             </table>

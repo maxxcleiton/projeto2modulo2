@@ -11,19 +11,30 @@
 
     <%- include('partials/header.ejs') %>
 
+    <div class="h1index">
+        <!-- <h1>Pokedex</h1> -->
+        <div>
+            <a href="/cadastro"><img src="/img/pokedex.png" alt="Imagem de uma Pokedex">
+            </a></div>
+        <div class="h2index">
+            <h2>Pokédex! adicione um novo Pokémon <a href="/cadastro">AQUI
+            </a></h1></div>
+        <!-- <h2>Lista de Pokémons:</h2> -->
+        </div>
+    </section>
+
     <main>
             <section id="pokemons">
                 <% pokedex.forEach(element => { %>
-                    <a href="/detalhes/<%= element.Id %>">
+                    <a href="/detalhes/<%= element.id %>">
                     <article class="card">
                         <div class="card_image">
-                            <img src="<%= element.Imagem %>" alt="<%= element.Nome %>">
+                            <img src="<%= element.imagem %>" alt="<%= element.nome %>">
                         </div>
                         <div class="nomes">
                             <div class="nomesMesmo">
-                                <p>Nome: <%= element.Nome %></p>
-                                <p>Tipo: <%= element.Tipo %></p>
-                                <p>Categoria: <%= element.Categoria %></p>
+                                <p><b>Nome: </b><%= element.nome %></p>
+                                <p><b>Tipo: </b><%= element.tipo %></p>
                             </div>
                         </div>
                     </article>
