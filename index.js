@@ -21,8 +21,6 @@ app.listen(port, () => { // listen é uma funcao do express pra criar servidor
 
 //
 
-let message = "";
-
 let pokedex = [
     {
         id: 1,
@@ -62,9 +60,10 @@ let pokedex = [
 //
 
 app.get('/', (req, res) => { // get é um método http/https que serve para trazer uma pagina
+
     res.render('index.ejs', {
         pokedex,
-    })
+    });
 })
 
 app.get('/detalhes/:id', (req, res) => { // get é um método http/https que serve para trazer uma pagina
@@ -79,14 +78,11 @@ app.get('/detalhes/:id', (req, res) => { // get é um método http/https que ser
     res.render('detalhes.ejs', {
         poke,
         pokedex,
-        message,
     })
 })
 
 app.get('/cadastro', (req, res) => { // get é um método http/https que serve para trazer uma pagina
     res.render('cadastro.ejs', {
-        // pokedex,
-        message,
     })
 })
 
@@ -103,6 +99,5 @@ app.post('/cadastro', (req,res) => {
     const { nome, tipo, imagem, descricao, altura, peso, categoria, habilidade, } = req.body;
     pokedex.push({ id: i, nome, tipo, imagem, descricao, altura, peso, categoria, habilidade,});
     console.log(pokedex);
-    message = `Pokémon adicionado com sucesso!`;
     res.redirect("/");
 });
