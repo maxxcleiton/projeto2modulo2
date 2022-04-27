@@ -55,6 +55,7 @@ let pokedex = [
         habilidade: 'Corrente de água',
     },
 ];
+
 //
 
 app.get('/', (req, res) => { // get é um método http/https que serve para trazer uma pagina
@@ -86,8 +87,7 @@ app.get('/cadastro', (req, res) => { // get é um método http/https que serve p
     })
 })
 
-//
-
+// Existem dois methods possíveis:
 // GET METHOD ROUTE
 app.get('/', (req,res) => {
     res.send('GET request to the homepage');
@@ -95,39 +95,11 @@ app.get('/', (req,res) => {
 
 // POST METHOD ROUTE
 app.post('/cadastro', (req,res) => {
-    let i = pokedex[pokedex.length-1].id + 1
+    let i = pokedex[pokedex.length-1].id + 1;
 
     const { nome, tipo, imagem, descricao, altura, peso, categoria, habilidade, } = req.body;
-    pokedex.push({ id: i, nome, tipo, imagem, descricao, altura, peso, categoria, habilidade,})
-    console.log(pokedex)
+    pokedex.push({ id: i, nome, tipo, imagem, descricao, altura, peso, categoria, habilidade,});
+    console.log(pokedex);
     message = `Pokémon adicionado com sucesso!`;
     res.redirect("/");
-
 });
-
-
-// Isso aqui sempre antes do post mais pra frente
-// app.use(express.urlencoded());
-
-// Tudo do formulário eu preciso organizar o json:
-// app.post('/subscription', (req,res) => {
-//     const { nome, email } = req.body;
-//     res.send({ nome: nome, email: email });
-// });
-
-// Aqui é a versao adicionando mensagem estilizada de resposta
-// app.post('/subscription', (req, res) => {
-//     const { nome, tipo, imagem, descricao, altura, peso, categoria, habilidade } = req.body;
-//     // res.send({
-//     //     nome: nome,
-//     //     tipo: tipo,
-//     //     imagem: imagem,
-//     //     descricao: descricao,
-//     //     altura: altura,
-//     //     peso: peso,
-//     //     categoria: categoria,
-//     //     habilidade: habilidade,
-//     // })
-//     message = `Pokémon cadastrado com sucesso!`;
-//     res.redirect('/');
-// });
