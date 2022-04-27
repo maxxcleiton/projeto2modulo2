@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/maxxcleiton/projeto2modulo2#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3"
   },

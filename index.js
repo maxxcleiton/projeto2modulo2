@@ -1,3 +1,4 @@
+require("dotenv").config();
 import express from "express" // importando o express
 import path from 'path' // serve para definir o caminho padrao
 const __dirname = path.resolve(path.dirname('')) // __dirname serve para informar qual é o caminho padrão da minha pasta
@@ -10,7 +11,7 @@ app.use(express.json())
 app.set("view engine", "ejs") // express reconheça o ejs da pasta views
 app.use(express.static(path.join(__dirname, "public")))
 
-const port = 3001
+const port = process.env.PORT || 3001
 app.listen(port, () => { // listen é uma funcao do express pra criar servidor
     console.log(`Rodando na porta ${port}`)
 })
