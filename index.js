@@ -1,8 +1,11 @@
-import dotenv from "dotenv";
+import dotenv from "dotenv"; // rodar dotenv 1/2
+
 import express from "express" // importando o express
 import path from 'path' // serve para definir o caminho padrao
 const __dirname = path.resolve(path.dirname('')) // __dirname serve para informar qual é o caminho padrão da minha pasta
-dotenv.config();
+
+dotenv.config(); // rodar dotenv 2/2
+
 console.log(__dirname)
 const app = express() // instanciando o express dentro da const app
 app.use(express.urlencoded({extended: true})) // Informacao vai para o body (o corpo da requisicao)
